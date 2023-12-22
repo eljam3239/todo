@@ -12,3 +12,8 @@ pub struct Todo {
 pub struct ConfigFile{
     pub data: Vec<Todo>,
 }
+
+pub struct Command {
+    pub command: String,
+    pub arguments: String,
+}

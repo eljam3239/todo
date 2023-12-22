@@ -21,3 +21,11 @@ pub fn init(){
         println!("{} {}", "created file".green(), DATA_FILE);
     }
 }
+
+pub fn get_args() -> structs::Command {
+    let args = std::env::args().collect::<Vec<String>>();
+    let command = args.get(1).unwrap_or(&"".to_string()).to_string();
+    let arguments = args.get(2).unwrap_or(&"".to_string()).to_string();
+
+    structs::Command { command, arguments }
+}
