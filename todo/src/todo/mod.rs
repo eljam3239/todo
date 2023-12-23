@@ -51,4 +51,33 @@ pub fn list() {
         );
     }
 }
+pub fn done(id: String) {
+    let mut todos = utils::get_todos().unwrap();
+    let id = id.parse::<u32>().unwrap_or(0);
 
+    let exists = todos.iter().any(|todo| todo.id == id);
+    if !exists {
+        println!("{}", "Todo not found".red());
+        return;
+    }
+    for todo in &mut todos {
+        if todo.id == id{
+            todo.done = true;
+            todo.updated_at = utils::get_timestamp();
+        }
+    }
+    utils::save_todos(todos);
+    println!("{}", "Marked todo as done".green());
+}
+pub fn remove(id: String){
+    let mut todos = utils::get_todos().unwrap();
+    let id = id.parse::<u32>().unwrap_or(0);
+    let exists = todos.iter().any(|todo| todo.id == id);
+    if !exists {
+        println!("{}", "Todo not found".red());
+        return;
+    }
+    todos.retain(|todo| todo.id !=id);
+    utils::save_todos(todos);
+    println!("{}", "Removed todo".green());
+}
