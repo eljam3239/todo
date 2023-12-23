@@ -19,7 +19,7 @@ pub fn add(title: String) {
         updated_at: utils::get_timestamp(),
     };
 
-    todos.push(todo); // Push todo to todos
+    todos.push(todo); 
 
     utils::save_todos(todos); // Save todos
 

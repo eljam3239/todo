@@ -6,9 +6,10 @@ use serde_json::from_str;
 use serde_json::Result;
 use std::{fs, io::Write};
 
+const DATA_FILE: &'static str = "~:\\.todobook\\data.json";
 pub fn init(){
-    if !fs::metadata("C:\\.todobook").is_ok(){
-        fs::create_dir("C:\\.todobook").unwrap();
+    if !fs::metadata("~\\.todobook").is_ok(){
+        fs::create_dir("~\\.todobook").unwrap();
 
         let mut file = fs::File::create(DATA_FILE).unwrap();
         file.write_all(b"{\"data\":[]}").unwrap();
@@ -55,5 +56,5 @@ pub fn save_todos(todos: Vec<structs::Todo>) {
     let json = serde_json::to_string(&config_file).unwrap();
 
     let mut file = fs::File::create(DATA_FILE).unwrap();
-    file.write_all(json.as_bytes()0.unwrap();
+    file.write_all(json.as_bytes()).unwrap();
 }

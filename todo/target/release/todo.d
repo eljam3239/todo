@@ -1,0 +1,1 @@
+/home/eljam3239/rust_projects/todo/todo/target/release/todo: /home/eljam3239/rust_projects/todo/todo/src/app/mod.rs /home/eljam3239/rust_projects/todo/todo/src/main.rs /home/eljam3239/rust_projects/todo/todo/src/structs/mod.rs /home/eljam3239/rust_projects/todo/todo/src/todo/mod.rs /home/eljam3239/rust_projects/todo/todo/src/utils/mod.rs
