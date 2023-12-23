@@ -42,3 +42,18 @@ pub fn get_id() -> u32 {
 
     id + rng.gen_range(1..1000)
 }
+
+pub fn get_todos() -> Result<Vec<structs::Todo>> {
+    let data = fs::read_to_string(DATA_FILE).unwrap();
+    let todos: structs::ConfigFile = from_str(&data)?;
+
+    Ok(todos.data)
+}
+
+pub fn save_todos(todos: Vec<structs::Todo>) {
+    let config_file = structs::ConfigFile { data: todos };
+    let json = serde_json::to_string(&config_file).unwrap();
+
+    let mut file = fs::File::create(DATA_FILE).unwrap();
+    file.write_all(json.as_bytes()0.unwrap();
+}
