@@ -6,10 +6,10 @@ pub fn start(){
     utils::init();
     let args = utils::get_args();
     match args.command.as_str(){
-        "a" => add(args.arguments),
-        "l" => list(),
-        "d" => done(args.arguments),
-        "r" => remove(args.arguments),
+        "add" => add(args.arguments),
+        "list" => list(),
+        "done" => done(args.arguments),
+        "remove" => remove(args.arguments),
         "q" => std::process::exit(0),
         _ => {
                 println!("{}", "            No command found - Showing help".black());
