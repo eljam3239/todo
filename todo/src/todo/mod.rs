@@ -47,7 +47,7 @@ pub fn list() {
             todo.title,
             todo.created_at,
             todo.updated_at,
-            if todo.done { "Completed ?".green() } else { "No ?".red() }
+            if todo.done { "Completed ?".green() } else { "No".red() }
         );
     }
 }
