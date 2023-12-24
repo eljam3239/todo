@@ -23,18 +23,18 @@ pub fn start(){
                 Help:
         
                 Command   | Arguments | Description
-                {}           text        Add a new todo
-                {}                       List all todos
-                {}           id          Mark a todo as done
-                {}           id          Delete a todo
+                {}           text      Add a new todo
+                {}                    List all todos
+                {}           id       Mark a todo as done
+                {}         id       Delete a todo
             ",
                     "Welcome to".grey(),
-                    "TodoBook".cyan(),
+                    "Todo".cyan(),
                     "Simple todo app written in Rust".black(),
-                    "a".cyan(),
-                    "l".blue(),
-                    "d".green(),
-                    "r".red()
+                    "add".cyan(),
+                    "list".blue(),
+                    "done".green(),
+                    "remove".red()
                 );
 
                 println!("{help}");
